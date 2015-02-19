@@ -1,0 +1,19 @@
+{
+  "name": "the-score-board",
+  "version": "0.0.0",
+  "authors": [
+    "Jonathon Choo <jonno.choo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "~4.3.0",
+    "foundation": "~5.5.1"
+  }
+}

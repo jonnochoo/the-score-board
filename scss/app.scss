@@ -1,0 +1,43 @@
+@import 'font-awesome';
+
+$background-color: #004F8B;
+$primary-color: #FFF;
+$font-family: Oswald;
+
+body {
+  background-color: $background-color;
+  color: $primary-color;
+  font-family: $font-family;
+  margin-top: 100px;
+}
+
+h1, h2, h3 {
+  color: $primary-color;
+  font-family: $font-family;
+}
+
+.ng-cloak {
+  display: none;
+}
+
+div.players {
+  font-size: 35px;
+  margin-bottom: 10px;
+  background-color: lighten($background-color, 30%);
+}
+
+.score {
+  text-align: center;
+  background-color: #ACD054;
+  height: 56px;
+  width: 56px;
+  margin-left: -15px;
+}
+
+.buttons {
+  text-align: right;
+}
+.buttons .fa-minus {
+  padding-left: 10px;
+  padding-right: 10px;
+}
