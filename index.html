@@ -20,7 +20,7 @@
     <div ng-show="isCreated && !isStarted" class="row">
       <h3>Enter The Player Names</h3>
       <div ng-repeat="player in players">
-        <input type="text" ng-model="player.name" />
+        <input type="text" ng-model="player.name" placeholder="Enter the name of player #{{$index + 1}}" />
       </div>
       <button class="small round" ng-click="start()">Start</button>
     </div>
