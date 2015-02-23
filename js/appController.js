@@ -1,31 +1,21 @@
 angular
   .module("scoreboardApp")
-  .controller("appController", AppController);
+  .controller("appController", appController);
 
-AppController.$inject= ['$scope'];
+appController.$inject= ['$scope', 'gameService'];
 
-function AppController($scope) {
-  $scope.numberOfPlayers = 4;
-  $scope.players = [];
+function appController($scope, gameService) {
+  $scope.gameService = gameService;
   $scope.isCreated = false;
   $scope.isStarted = false;
+  $scope.numberOfPlayers = 4;
 
   $scope.create = function() {
     $scope.isCreated = true;
-    for(var i=0; i < $scope.numberOfPlayers; i++) {
-      $scope.players.push(new Player());
-    }
-  }
-
-  $scope.down = function(player){
-    player.score = player.score - 1;
+    gameService.createGame($scope.numberOfPlayers);
   }
 
   $scope.start = function(player){
     $scope.isStarted = true;
-  }
-
-  $scope.up = function(player){
-    player.score++;
   }
 }

@@ -10,16 +10,16 @@
 <body ng-controller="appController" ng-cloak>
 
   <div class="container">
-    
+
     <div ng-show="!isCreated" class="row">
-      <h3>How Many Players?</h3>
+      <h3>How Many Players?</h3>      
       <input type="number" ng-model="numberOfPlayers" value="{{numberOfPlayers}}">
       <button class="small round" ng-click="create()">Create</button>
     </div>
 
     <div ng-show="isCreated && !isStarted" class="row">
       <h3>Enter The Player Names</h3>
-      <div ng-repeat="player in players">
+      <div ng-repeat="player in gameService.players">
         <input type="text" ng-model="player.name" placeholder="Enter the name of player #{{$index + 1}}" />
       </div>
       <button class="small round" ng-click="start()">Start</button>
@@ -28,7 +28,7 @@
     <div ng-show="isStarted"  class="row">
       <h3>The Score Board</h3>
     </div>
-    <div ng-show="isStarted" class="row players" ng-repeat="player in players | orderBy: 'score': true" >
+    <div ng-show="isStarted" class="row players" ng-repeat="player in gameService.players | orderBy: 'score': true" >
 
       <div class="columns large-1">
         <div class="score">
@@ -39,7 +39,7 @@
         {{player.name}} 
       </div>      
       <div class="buttons columns large-2 right">
-        <i class="fa fa-plus" ng-click="up(player)"></i>
+        <i class="fa fa-plus" ng-click="player.incrementScore()"></i>
         <i class="fa fa-minus" ng-click="down(player)"></i>
       </div>
     </div>
@@ -50,5 +50,6 @@
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/player.js"></script>
   <script type="text/javascript" src="js/appController.js"></script>
+  <script type="text/javascript" src="js/gameService.js"></script>
 </body>
 </html>
